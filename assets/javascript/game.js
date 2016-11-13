@@ -4,10 +4,10 @@ var crystalCollector = {
 	
 	// These are the inital variables for the crystal collector game
 	logos: [
-		cubs= 0,
-		bulls= 0,
-		bears= 0,
-		hawks= 0,
+		cubs: 0,
+		bulls: 0,
+		bears: 0,
+		hawks: 0,
 	],
 	userScore: 0,
 	targetScore: 0,
@@ -24,7 +24,7 @@ var crystalCollector = {
 		// 	this.logos[i] = (Math.floor(Math.random() * 12) + 1)
 		// }; // This closes the for loop
 		// Optimized code
-		for(var p in this.scores){	
+		for(var p in this.logos){	
         this.logos[p] = (Math.floor(Math.random() * 12) + 1);
         }; // This closes the for loop
 		
@@ -130,20 +130,23 @@ $(document).ready(function(){
 // Event listener code that Tish helped me with
 	$(document).on('click', '.logos', function(){
 
-	        switch($(this).attr('id')){
-	            case "cubs":
-	                crystalCollector.updateScore();	    
-	            break;
-	            case "bulls":
-	                crystalCollector.bullsScore();
-	            break;
-	            case "bears":
-	                crystalCollector.bearsScore();
-	            break;
-	            case "hawks":
-	                crystalCollector.hawksScore()
-	            break;
-	        }
+		crystalCollector.updateScore($(this).attr('id'));
+
+// Old optimizations
+	        // switch($(this).attr('id')){
+	        //     case "cubs":
+	        //         crystalCollector.updateScore($(this).attr('id'));	    
+	        //     break;
+	        //     case "bulls":
+	        //         crystalCollector.updateScore($(this).attr('id'));
+	        //     break;
+	        //     case "bears":
+	        //         crystalCollector.updateScore($(this).attr('id'));
+	        //     break;
+	        //     case "hawks":
+	        //         crystalCollector.updateScore($(this).attr('id'));
+	        //     break;
+	        // }
 
 	        crystalCollector.updateWins();
 	        
@@ -152,3 +155,5 @@ $(document).ready(function(){
 
 crystalCollector.setupGame();
 }); // closes the document ready function
+
+
