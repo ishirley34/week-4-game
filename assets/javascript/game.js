@@ -3,12 +3,12 @@
 var crystalCollector = {
 	
 	// These are the inital variables for the crystal collector game
-	logos: [
+	logos: {
 		cubs: 0,
 		bulls: 0,
 		bears: 0,
 		hawks: 0,
-	],
+	},
 	userScore: 0,
 	targetScore: 0,
 	wins: 0,
@@ -82,6 +82,7 @@ var crystalCollector = {
 	// This is the optimized score function
 	updateScore: function(id){
     	this.userScore = this.userScore + this.logos[id];
+    	$("#totalScore").html(this.userScore);
     },
 
 	// // This function adds win conditions
