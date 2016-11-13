@@ -2,4 +2,38 @@
 	width: 100px;
 	height: 100px;
 	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#instructions {
+	background: #03327c;
+	margin-bottom: 10px;
+}
+
+#ranNum {
+	background: #76a4ed;
+	margin-left: 15px;
+	height: 95px;
+}
+
+#winloss {
+	background: #03327c;
+	margin-left: 5px;
+	height: 95px;
+	margin-left: 15px;
+}
+
+#scoreId {
+	background: #cc0c0c;
+	margin-left: 15px;
+}
+
+#scorePanel {
+	background: #03327c;
+	margin-left: 15px;
+}
+
+#cubs {
+	margin-left: 15px;
 }
