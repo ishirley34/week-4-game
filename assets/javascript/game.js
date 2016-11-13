@@ -1,4 +1,8 @@
 
+	// Sounds for fun
+	var coin = new Audio(src = "assets/sounds/coin.wav");
+	var clear = new Audio(src = "assets/sounds/world_clear.wav");
+	var dead = new Audio(src = "assets/sounds/mariodie.wav");
 
 var crystalCollector = {
 	
@@ -45,10 +49,12 @@ var crystalCollector = {
 
 	updateWins: function() {
 		 if (this.userScore > this.targetScore) {
+		 	dead.play();
 			alert("My shoe maths better than you");
 			this.losses ++;
 			this.setupGame();
 		} else if (this.userScore == this.targetScore){
+			clear.play();
 			alert("You're the best mather around!!!")
 			this.wins ++;
 			this.setupGame();
@@ -62,10 +68,14 @@ var crystalCollector = {
 $(document).ready(function(){
 
 
+
+
 // These add the onclick listeners
 	$(document).on('click', '.logos', function(){
 
 		crystalCollector.updateScore($(this).attr('id'));
+		coin.play();
+
 
 	    crystalCollector.updateWins();
 	        
